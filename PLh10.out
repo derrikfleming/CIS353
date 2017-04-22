@@ -1,0 +1,42 @@
+SQL> @PLh10
+Enter a trainee ID: 78
+Enter an increment for his trainers: 3
++++++ 78 is 1) not a sailor, or 2) does not have a trainer                      
+
+PL/SQL procedure successfully completed.
+
+
+no rows selected
+
+SQL> @PLh10
+Enter a trainee ID: 32
+Enter an increment for his trainers: 2
++++++ old row: 58  Jim            10  35   32                                   
++++++ new row: 58  Jim            12  35   32                                   
++++++ old row: 71  Dave           10  16   32                                   
++++++ new row: 71  Dave           12  16   32                                   
++++++ Sailors DB updated!                                                       
+
+PL/SQL procedure successfully completed.
+
+
+       SID SNAME               RATING        AGE    TRAINEE                     
+---------- --------------- ---------- ---------- ----------                     
+        58 Jim                     12         35         32                     
+        71 Dave                    12         16         32                     
+
+SQL> @PLh10
+Enter a trainee ID: 32
+Enter an increment for his trainers: 7
++++++ old row: 58  Jim            12  35   32                                   
++++++-2290...ORA-02290: check constraint (FLEMINDE.SIC3) violated               
+
+PL/SQL procedure successfully completed.
+
+
+       SID SNAME               RATING        AGE    TRAINEE                     
+---------- --------------- ---------- ---------- ----------                     
+        58 Jim                     12         35         32                     
+        71 Dave                    12         16         32                     
+
+SQL> SPOOL off
